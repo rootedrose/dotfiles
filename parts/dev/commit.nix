@@ -15,6 +15,7 @@
     mkHook = name: {
       inherit excludes;
       enable = true;
+      description = "pre commit hook for ${name}";
       fail_fast = true;
       verbose = true;
     };
@@ -36,8 +37,6 @@
             enable = lib.mkForce false;
             always_run = true;
           };
-
-          lychee = mkHook "lychee";
         };
       };
     };
