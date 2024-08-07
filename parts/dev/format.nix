@@ -1,7 +1,11 @@
-{ inputs, ... }: {
-  imports = [ inputs.treefmt-nix.flakeModule ];
+{inputs, ...}: {
+  imports = [inputs.treefmt-nix.flakeModule];
 
-  perSystem = { pkgs, config, ... }: {
+  perSystem = {
+    pkgs,
+    config,
+    ...
+  }: {
     formatter = config.treefmt.build.wrapper;
 
     treefmt = {

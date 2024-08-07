@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  perSystem = { system, ... }: {
+{inputs, ...}: {
+  perSystem = {system, ...}: {
     _module.args.pkgs = import inputs.nixpkgs {
       inherit system;
 
@@ -7,8 +7,8 @@
         allowUnfree = true;
         allowUnsupportedSystem = true;
       };
-      
-      overlays = [ ];
+
+      overlays = [];
     };
   };
 
