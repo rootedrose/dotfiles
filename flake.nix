@@ -53,6 +53,16 @@
       };
     };
 
+    flake-utils = {
+      type = "github";
+      owner = "numtide";
+      repo = "flake-utils";
+
+      inputs = {
+        systems.follows = "systems";
+      };
+    };
+
     git-hooks = {
       type = "github";
       owner = "cachix";
@@ -134,16 +144,6 @@
       type = "github";
       owner = "catppuccin";
       repo = "nix";
-    };
-
-    flake-utils = {
-      type = "github";
-      owner = "numtide";
-      repo = "flake-utils";
-
-      inputs = {
-        systems.follows = "systems";
-      };
     };
   };
 
