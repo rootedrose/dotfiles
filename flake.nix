@@ -4,7 +4,20 @@
       type = "github";
       owner = "NixOS";
       repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
+
+    nixpkgs-unstable = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
       ref = "nixpkgs-unstable";
+    };
+
+    nixpkgs-master = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
     };
 
     nixpkgs-small = {
@@ -18,8 +31,9 @@
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
+
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs-unstable";
       };
     };
 
@@ -33,8 +47,9 @@
       type = "github";
       owner = "hercules-ci";
       repo = "flake-parts";
+
       inputs = {
-        nixpkgs-lib.follows = "nixpkgs";
+        nixpkgs-lib.follows = "nixpkgs-unstable";
       };
     };
 
@@ -56,7 +71,7 @@
       repo = "lanzaboote";
 
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs-unstable";
         flake-parts.follows = "flake-parts";
         pre-commit-hooks-nix.follows = "";
         flake-compat.follows = "";
